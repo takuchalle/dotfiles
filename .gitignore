@@ -1,0 +1,12 @@
+# for emacs
+*~
+*.elc
+.emacs.d/elpa
+
+# for binary file
+*.o
+
+# for gtags
+GTAGS
+GPATH
+GRTAGS
