@@ -1,0 +1,27 @@
+[user]
+	email = tky.ohashi@gmail.com
+	name = Takuya OHASHI
+
+[color]
+        ui = auto
+        status = auto
+        diff = auto
+	branch = auto
+	interactive = auto
+	grep = auto
+
+[alias]
+	st = status
+	co = checkout
+	cm = commit
+	sh = show
+	dc = diff --cached
+	df = diff
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	lga = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+
+[core]
+	pager = less -R
+
+[merge]
+	ff = false
