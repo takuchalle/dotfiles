@@ -121,6 +121,14 @@
 (require 'smartparens-config)
 (smartparens-global-mode t)
 
+;; recentf
+(require 'recentf)
+(setq recentf-max-saved-items 100)
+(setq recentf-exclude '("recentf"))
+(global-set-key (kbd "C-x C-r") 'helm-recentf)
+(setq recentf-auto-save-timer (run-with-idle-timer 30 t 'recentf-save-list))
+(recentf-mode 1)
+
 (when (require 'server nil t)
   (unless (server-running-p)
     (server-start)))

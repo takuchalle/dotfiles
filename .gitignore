@@ -2,9 +2,13 @@
 *~
 *.elc
 .emacs.d/elpa
+.emacs.d/recentf
 
 # for binary file
 *.o
+
+# for fish
+.config/
 
 # for gtags
 GTAGS
