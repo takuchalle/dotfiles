@@ -8,7 +8,8 @@
 *.o
 
 # for fish
-.config/
+.config/fish/fish_history
+.config/fish/fishd.*
 
 # for gtags
 GTAGS
