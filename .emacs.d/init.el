@@ -129,6 +129,10 @@
 (setq recentf-auto-save-timer (run-with-idle-timer 30 t 'recentf-save-list))
 (recentf-mode 1)
 
+;; fish-mode
+(package-install 'fish-mode)
+(require 'fish-mode)
+
 (when (require 'server nil t)
   (unless (server-running-p)
     (server-start)))
