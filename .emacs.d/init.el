@@ -96,6 +96,10 @@
 (define-key company-search-map (kbd "C-n") 'company-select-next)
 (define-key company-search-map (kbd "C-p") 'company-select-previous)
 
+;; irony
+(package-install 'irony)
+(package-install 'company-irony)
+
 ;; markdown
 (package-install 'markdown-mode)
 (require 'markdown-mode)
@@ -132,6 +136,9 @@
 ;; fish-mode
 (package-install 'fish-mode)
 (require 'fish-mode)
+
+;; swift-mode
+(package-install 'swift-mode)
 
 (when (require 'server nil t)
   (unless (server-running-p)
