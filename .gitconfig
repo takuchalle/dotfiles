@@ -25,3 +25,6 @@
 
 [merge]
 	ff = false
+
+[ghq]
+	root = ~/go/src
