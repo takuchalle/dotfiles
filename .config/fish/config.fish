@@ -1,6 +1,14 @@
 # environment
 . ~/.config/fish/env.fish
 
+# load functions
+. ~/.config/fish/functions.fish
+
+function fish_user_key_bindings
+    bind \cr fzy_select_history
+    bind \c] fzy_ghq_cd
+end
+
 # alias
 alias em "emacsclient -t"
 
