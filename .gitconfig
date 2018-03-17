@@ -28,3 +28,4 @@
 
 [ghq]
 	root = ~/go/src
+	root = ~/src
