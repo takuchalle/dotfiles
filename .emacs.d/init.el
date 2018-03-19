@@ -12,7 +12,7 @@
 (global-set-key (kbd "C-m") 'newline-and-indent)
 (global-set-key (kbd "C-h") 'delete-backward-char)
 (global-set-key (kbd "C-t") 'other-window)
-(global-set-key (kbd "C-u") 'undo)
+(global-set-key (kbd "C-z") 'undo)
 
 ;; disable menu when terminal
 (when (eq window-system 'nil)
