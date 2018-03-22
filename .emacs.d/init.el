@@ -58,6 +58,10 @@
 (package-initialize)
 (package-refresh-contents)
 
+;; color setting
+(package-install 'atom-dark-theme)
+(load-theme 'atom-dark)
+
 ;; helm
 (package-install 'helm)
 (require 'helm-config)
