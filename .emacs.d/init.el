@@ -60,7 +60,7 @@
 
 ;; color setting
 (package-install 'atom-dark-theme)
-(load-theme 'atom-dark)
+(load-theme 'atom-dark t)
 
 ;; helm
 (package-install 'helm)
