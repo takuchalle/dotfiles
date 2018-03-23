@@ -14,6 +14,9 @@
 (global-set-key (kbd "C-t") 'other-window)
 (global-set-key (kbd "C-z") 'undo)
 
+(setq indent-tabs-mode nil)
+(setq-default tab-width 4)
+
 ;; disable menu when terminal
 (when (eq window-system 'nil)
   (menu-bar-mode 0))
