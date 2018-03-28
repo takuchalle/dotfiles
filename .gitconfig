@@ -22,6 +22,7 @@
 
 [core]
 	pager = less -R
+	editor = emacsclient -t
 
 [merge]
 	ff = false
