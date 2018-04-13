@@ -28,5 +28,4 @@
 	ff = false
 
 [ghq]
-	root = ~/go/src
 	root = ~/src
