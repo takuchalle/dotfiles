@@ -148,6 +148,10 @@
 ;; swift-mode
 (package-install 'swift-mode)
 
+(defun today()
+  (interactive)
+  (insert (format-time-string "%Y/%m/%d" (current-time))))
+
 (when (require 'server nil t)
   (unless (server-running-p)
     (server-start)))
