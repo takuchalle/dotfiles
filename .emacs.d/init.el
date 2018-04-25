@@ -152,6 +152,19 @@
   (interactive)
   (insert (format-time-string "%Y/%m/%d" (current-time))))
 
+(package-install 'google-c-style)
+(require 'google-c-style)
+
+(defun cc-mode-init ()
+  (google-set-c-style)
+  (setq indent-tabs-mode t)
+  (setq c-basic-offset 4)
+  (c-set-offset 'case-label 0)
+  )
+
+(add-hook 'c-mode-hook 'cc-mode-init)
+(add-hook 'c++-mode-hook 'cc-mode-init)
+
 (when (require 'server nil t)
   (unless (server-running-p)
     (server-start)))
