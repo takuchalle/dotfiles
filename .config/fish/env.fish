@@ -5,4 +5,4 @@ set fish_user_paths ~/bin $fish_user_paths
 
 set -x GOPATH $HOME
 
-set -x EDITOR "emacs -nw"
+set -x EDITOR "emacsclient -nw"
