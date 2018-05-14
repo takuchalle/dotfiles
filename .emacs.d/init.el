@@ -171,6 +171,8 @@
 (add-hook 'prog-mode-hook 'highlight-symbol-mode) ;; turn on when programming lang file is open
 (add-hook 'prog-mode-hook 'highlight-symbol-nav-mode) ;; use M-p/M-n to move between symble
 
+(package-install 'go-mode)
+
 (when (require 'server nil t)
   (unless (server-running-p)
     (server-start)))
