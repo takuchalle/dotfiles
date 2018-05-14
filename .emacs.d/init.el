@@ -165,6 +165,12 @@
 (add-hook 'c-mode-hook 'cc-mode-init)
 (add-hook 'c++-mode-hook 'cc-mode-init)
 
+(package-install 'highlight-symbol)
+(require 'highlight-symbol)
+(setq highlight-symbol-idle-delay 0.5) ;; highlight after 0.5s idle
+(add-hook 'prog-mode-hook 'highlight-symbol-mode) ;; turn on when programming lang file is open
+(add-hook 'prog-mode-hook 'highlight-symbol-nav-mode) ;; use M-p/M-n to move between symble
+
 (when (require 'server nil t)
   (unless (server-running-p)
     (server-start)))
