@@ -160,6 +160,7 @@
   (setq indent-tabs-mode t)
   (setq c-basic-offset 4)
   (c-set-offset 'case-label 0)
+  (c-set-offset 'inextern-lang 0)
   )
 
 (add-hook 'c-mode-hook 'cc-mode-init)
