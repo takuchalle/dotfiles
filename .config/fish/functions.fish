@@ -19,3 +19,12 @@ function fzy_ghq_cd
     end
     commandline -f repaint
 end
+
+function md
+	echo "" |read foo
+	find . -name "*.md" | fzy | read foo
+
+	if [ -e $foo ]
+		em $foo
+	end
+end
