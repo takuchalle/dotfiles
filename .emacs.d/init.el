@@ -159,12 +159,32 @@
   (google-set-c-style)
   (setq indent-tabs-mode t)
   (setq c-basic-offset 4)
-  (c-set-offset 'case-label 0)
+  (c-set-offset 'case-label -1)
   (c-set-offset 'inextern-lang 0)
   )
 
 (add-hook 'c-mode-hook 'cc-mode-init)
 (add-hook 'c++-mode-hook 'cc-mode-init)
+
+;; TypeScript
+(package-install 'typescript-mode)
+(require 'typescript-mode)
+(add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-mode))
+
+(package-install 'tide)
+(require 'tide)
+(add-hook 'typescript-mode-hook
+		  (lambda ()
+			(interactive)
+			(tide-setup)
+			(flycheck-mode +1)
+			(setq flycheck-check-syntax-automatically '(save mode-enabled))
+			(eldoc-mode +1)
+			(tide-hl-identifier-mode +1)
+			(company-mode +1)
+			(global-set-key (kbd "M-*") 'tide-jump-back)))
+
+(add-hook 'before-save-hook 'tide-format-before-save)
 
 (package-install 'highlight-symbol)
 (require 'highlight-symbol)
