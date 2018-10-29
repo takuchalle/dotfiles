@@ -192,6 +192,10 @@
 (add-hook 'prog-mode-hook 'highlight-symbol-mode) ;; turn on when programming lang file is open
 (add-hook 'prog-mode-hook 'highlight-symbol-nav-mode) ;; use M-p/M-n to move between symble
 
+(package-install 'yaml-mode)
+(require 'yaml-mode)
+(add-to-list 'auto-mode-alist '("\\.yaml\\'" . yaml-mode))
+
 (package-install 'go-mode)
 
 (when (require 'server nil t)
