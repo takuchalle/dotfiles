@@ -62,8 +62,8 @@
 (package-refresh-contents)
 
 ;; color setting
-(package-install 'atom-dark-theme)
-(load-theme 'atom-dark t)
+(package-install 'dracula-theme)
+(load-theme 'dracula t)
 
 ;; helm
 (package-install 'helm)
@@ -159,12 +159,32 @@
   (google-set-c-style)
   (setq indent-tabs-mode t)
   (setq c-basic-offset 4)
-  (c-set-offset 'case-label 0)
+  (c-set-offset 'case-label -1)
   (c-set-offset 'inextern-lang 0)
   )
 
 (add-hook 'c-mode-hook 'cc-mode-init)
 (add-hook 'c++-mode-hook 'cc-mode-init)
+
+;; TypeScript
+(package-install 'typescript-mode)
+(require 'typescript-mode)
+(add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-mode))
+
+(package-install 'tide)
+(require 'tide)
+(add-hook 'typescript-mode-hook
+		  (lambda ()
+			(interactive)
+			(tide-setup)
+			(flycheck-mode +1)
+			(setq flycheck-check-syntax-automatically '(save mode-enabled))
+			(eldoc-mode +1)
+			(tide-hl-identifier-mode +1)
+			(company-mode +1)
+			(global-set-key (kbd "M-*") 'tide-jump-back)))
+
+(add-hook 'before-save-hook 'tide-format-before-save)
 
 (package-install 'highlight-symbol)
 (require 'highlight-symbol)
@@ -172,8 +192,35 @@
 (add-hook 'prog-mode-hook 'highlight-symbol-mode) ;; turn on when programming lang file is open
 (add-hook 'prog-mode-hook 'highlight-symbol-nav-mode) ;; use M-p/M-n to move between symble
 
+(package-install 'yaml-mode)
+(require 'yaml-mode)
+(add-to-list 'auto-mode-alist '("\\.yaml\\'" . yaml-mode))
+
 (package-install 'go-mode)
 
 (when (require 'server nil t)
   (unless (server-running-p)
     (server-start)))
+
+(when (executable-find "cmigemo")
+  (package-install 'migemo)
+  (require 'migemo)
+  (setq migemo-command (executable-find "cmigemo"))
+  (setq migemo-options '("-q" "--emacs" "-i" "\a"))
+  (setq migemo-dictionary "/usr/share/cmigemo/utf-8/migemo-dict")
+  (setq migemo-user-dictionary nil)
+  (setq migemo-regex-dictionary nil)
+  (setq migemo-coding-system 'utf-8)
+  (load-library "migemo")
+  (migemo-init)
+  )
+
+(package-install 'direx)
+(package-install 'popwin)
+(require 'direx)
+(require 'direx-project)
+(require 'popwin)
+(setq displxay-buffer-function 'popwin:display-buffer)
+(push '(direx:direx-mode :position left :width 40 :dedicated t)
+	  popwin:special-display-config)
+(global-set-key (kbd "C-x C-j") 'direx:jump-to-directory-other-window)
