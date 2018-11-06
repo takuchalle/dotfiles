@@ -62,8 +62,8 @@
 (package-refresh-contents)
 
 ;; color setting
-(package-install 'atom-dark-theme)
-(load-theme 'atom-dark t)
+(package-install 'dracula-theme)
+(load-theme 'dracula t)
 
 ;; helm
 (package-install 'helm)
