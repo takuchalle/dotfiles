@@ -11,6 +11,7 @@ end
 
 # alias
 alias em "emacsclient -t"
+alias be "bundle exec"
 
 # local setting
 if test -e ~/.config/fish/local.fish
