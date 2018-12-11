@@ -198,6 +198,10 @@
 
 (package-install 'go-mode)
 
+(package-install 'dart-mode)
+(setq dart-enable-analysis-server t)
+(add-hook 'dart-mode-hook 'flycheck-mode)
+
 (when (require 'server nil t)
   (unless (server-running-p)
     (server-start)))
