@@ -10,7 +10,7 @@ function fish_user_key_bindings
 end
 
 # alias
-alias em "emacsclient -t"
+alias em 'emacsclient -t -a ""'
 alias be "bundle exec"
 
 # local setting
