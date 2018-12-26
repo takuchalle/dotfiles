@@ -61,6 +61,8 @@
 (package-initialize)
 (package-refresh-contents)
 
+(package-install 'use-package)
+
 ;; color setting
 (package-install 'dracula-theme)
 (load-theme 'dracula t)
