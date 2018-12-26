@@ -221,6 +221,11 @@
   (migemo-init)
   )
 
+;; Language Server Protocol
+(package-install 'lsp-mode)
+(package-install 'lsp-ui)
+(package-install 'company-lsp)
+
 (package-install 'direx)
 (package-install 'popwin)
 (require 'direx)
