@@ -217,13 +217,3 @@
 (package-install 'lsp-mode)
 (package-install 'lsp-ui)
 (package-install 'company-lsp)
-
-(package-install 'direx)
-(package-install 'popwin)
-(require 'direx)
-(require 'direx-project)
-(require 'popwin)
-(setq displxay-buffer-function 'popwin:display-buffer)
-(push '(direx:direx-mode :position left :width 40 :dedicated t)
-	  popwin:special-display-config)
-(global-set-key (kbd "C-x C-j") 'direx:jump-to-directory-other-window)
