@@ -67,24 +67,16 @@
 (package-install 'dracula-theme)
 (load-theme 'dracula t)
 
-;; helm
-(package-install 'helm)
-(require 'helm-config)
-(helm-mode 1)
-(global-set-key (kbd "M-x")     'helm-M-x)
-(global-set-key (kbd "M-y")     'helm-show-kill-ring)
-(global-set-key (kbd "C-x C-f") 'helm-find-files)
-
-(define-key helm-map (kbd "C-h") 'delete-backward-char)
-(define-key helm-find-files-map (kbd "C-h") 'delete-backward-char)
-(define-key helm-find-files-map (kbd "TAB") 'helm-execute-persistent-action)
-(define-key helm-read-file-map (kbd "TAB") 'helm-execute-persistent-action)
-
-(package-install 'helm-gtags)
-(require 'helm-tags)
-(global-set-key (kbd "M-.") 'helm-gtags-find-tag)
-(global-set-key (kbd "M-*") 'helm-gtags-pop-stack)
-(global-set-key (kbd "M-/") 'helm-gtags-find-rtag)
+;; ivy
+(package-install 'ivy)
+(package-install 'counsel)
+(require 'ivy)
+(ivy-mode 1)
+(setq ivy-use-virtual-buffers t)
+(setq enable-recursive-minibuffers t)
+(global-set-key (kbd "M-x") 'counsel-M-x)
+(global-set-key (kbd "C-x C-f") 'counsel-find-file)
+(define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history)
 
 ;; magit
 (package-install 'magit)
@@ -139,9 +131,9 @@
 (require 'recentf)
 (setq recentf-max-saved-items 100)
 (setq recentf-exclude '("recentf"))
-(global-set-key (kbd "C-x C-r") 'helm-recentf)
 (setq recentf-auto-save-timer (run-with-idle-timer 30 t 'recentf-save-list))
 (recentf-mode 1)
+(global-set-key (kbd "C-x C-r") 'counsel-recentf)
 
 ;; fish-mode
 (package-install 'fish-mode)
