@@ -213,3 +213,15 @@
 (package-install 'lsp-mode)
 (package-install 'lsp-ui)
 (package-install 'company-lsp)
+
+
+;; snippet
+(package-install 'yasnippet)
+(package-install 'yasnippet-snippets)
+(package-install 'ivy-yasnippet)
+(require 'yasnippet)
+(require 'ivy-yasnippet)
+(setq yas-snippet-dirs
+	  '("~/.emacs.d/snippets"
+		"~/.emacs.d/elpa/snippets"))
+(yas-global-mode 1)
