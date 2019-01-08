@@ -196,10 +196,6 @@
 (setq dart-enable-analysis-server t)
 (add-hook 'dart-mode-hook 'flycheck-mode)
 
-(when (require 'server nil t)
-  (unless (server-running-p)
-    (server-start)))
-
 (when (executable-find "cmigemo")
   (package-install 'migemo)
   (require 'migemo)
