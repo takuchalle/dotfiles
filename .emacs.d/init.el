@@ -225,3 +225,7 @@
 	  '("~/.emacs.d/snippets"
 		"~/.emacs.d/elpa/snippets"))
 (yas-global-mode 1)
+
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(when (file-exists-p custom-file)
+    (load custom-file))
