@@ -13,6 +13,8 @@
 (global-set-key (kbd "C-h") 'delete-backward-char)
 (global-set-key (kbd "C-t") 'other-window)
 (global-set-key (kbd "C-z") 'undo)
+(global-set-key [right] 'forward-to-word)
+(global-set-key [left] 'backward-word)
 
 (setq indent-tabs-mode nil)
 (setq-default tab-width 4)
