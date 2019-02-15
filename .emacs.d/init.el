@@ -226,17 +226,20 @@
   (migemo-init)
   )
 
-;; Language Server Protocol
-(package-install 'lsp-mode)
-(package-install 'lsp-ui)
-(package-install 'company-lsp)
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; eglot
 (package-install 'eglot)
-(add-to-list 'eglot-server-programs '((c++ mode c-mode) . "clangd"))
+(require 'eglot)
+(add-to-list 'eglot-server-programs '((c++-mode c-mode) . ("/usr/bin/clangd")))
+(add-to-list 'eglot-server-programs '((dart-mode) . ("/tmp/dart-sdk/bin/dart" "/tmp/dart-sdk/bin/snapshots/analysis_server.dart.snapshot" "--lsp")))
+(add-to-list 'eglot-server-programs '((go-mode) . ("go-langserver")))
 (add-hook 'c-mode-hook 'eglot-ensure)
 (add-hook 'c++-mode-hook 'eglot-ensure)
+(add-hook 'dart-mode-hook 'eglot-ensure)
+(add-hook 'go-mode-hook 'eglot-ensure)
+(define-key eglot-mode-map (kbd "M-.") 'xref-find-definitions)
+(define-key eglot-mode-map (kbd "M-*") 'xref-pop-marker-stack)
+(define-key eglot-mode-map (kbd "<f1>") 'eglot-help-at-point)
 
 ;; snippet
 (package-install 'yasnippet)
