@@ -116,10 +116,6 @@
 (set-face-attribute 'company-scrollbar-bg nil
 					:background "gray40")
 
-;; irony
-(package-install 'irony)
-(package-install 'company-irony)
-
 ;; markdown
 (package-install 'markdown-mode)
 (require 'markdown-mode)
