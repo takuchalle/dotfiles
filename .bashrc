@@ -23,6 +23,12 @@ case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;
 esac
 
+# show git branch
+# https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
+#source ~/.git-prompt.sh
+#export PS1='\[\e[1;32m $(__git_ps1 "(%s)") \[\e[0m\] \$'
+export PS1='\[\e[30;47m\]\t>\[\e[37;46m\]\W\[\e[0;0m\] \$ '
+
 # PATH
 export GOPATH=$HOME
 export PATH=$GOPATH/bin:$PATH
@@ -54,3 +60,4 @@ if [ -f $(ghq list --full-path | grep "git/git")/contrib/completion/git-prompt.s
 	export GIT_PS1_SHOWDIRTYSTATE=1
 	export PS1='[\w]$(__git_ps1 " (%s)")\$ '
 fi
+
