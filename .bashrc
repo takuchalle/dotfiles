@@ -36,8 +36,10 @@ export PATH=$GOPATH/bin:$PATH
 export EDITOR="emacsclient -t"
 
 # alias
-alias em="emacsclient -t"
+alias em='emacsclient -t -a ""'
 alias be="bundle exec"
+alias ls="ls --color=auto"
+alias add="git add"
 
 if [ -f ~/.bash_secret ]; then
     . ~/.bash_secret
