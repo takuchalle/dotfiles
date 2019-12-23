@@ -1,3 +1,8 @@
+## PATH
+export PATH=~/bin/:$PATH
+export GOPATH=$HOME
+export EDITOR="emacsclient -nw"
+
 ## enable color
 autoload -Uz colors
 colors
@@ -26,7 +31,6 @@ zstyle ':zle:*' word-chars " /=;@:{},|"
 zstyle ':zle:*' word-style unspecified
 
 ## Alias
-
 case ${OSTYPE} in
 	darwin*)
 		export CLICOLOR=1
@@ -69,3 +73,17 @@ fzf-src() {
 }
 zle -N fzf-src
 bindkey '^]' fzf-src
+
+em() {
+	local file
+	if [ $1 ]; then
+		emacsclient -nw $1
+	else
+		file=$(([ -n "$ZSH_NAME" ] && fc -l 1 || history) | grep em | fzf -0 -1 | awk '{print $NF}')
+
+		echo $file
+		if [ -e $file ]; then
+			emacsclient -nw $file
+		fi
+	fi
+}
