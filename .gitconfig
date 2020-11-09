@@ -1,6 +1,6 @@
 [user]
-	email = tky.ohashi@gmail.com
-	name = Takuya OHASHI
+	email = me@takuchalle.dev
+	name = takuchalle
 
 [color]
         ui = auto
@@ -22,7 +22,7 @@
 
 [core]
 	pager = less -R
-	editor = emacsclient -t
+	editor = vim
 
 [merge]
 	ff = false
