@@ -40,6 +40,7 @@ case ${OSTYPE} in
 		alias ls='ls -F --color=auto'
 		;;
 esac
+alias g=git
 
 ## Functions
 fe() {
