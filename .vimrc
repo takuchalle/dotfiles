@@ -19,7 +19,8 @@ set autoindent
 set tabstop=4
 set shiftwidth=4
 set background=dark
-
+" disable beep
+set belloff=all
 " keymap on command buffer
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
