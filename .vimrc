@@ -24,6 +24,10 @@ set belloff=all
 " keymap on command buffer
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
+" increment search
+set incsearch
+
+set laststatus=2
 
 syntax enable
 
@@ -34,6 +38,7 @@ Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'mattn/vim-sonictemplate'
 Plug 'jiangmiao/auto-pairs'
+Plug 'itchyny/lightline.vim'
 call plug#end()
 
 let g:sonictemplate_vim_template_dir = [ '~/.dotfiles/sonictemplate' ]
