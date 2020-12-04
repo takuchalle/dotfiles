@@ -31,6 +31,13 @@ zstyle ':zle:*' word-chars " /=;@:{},|"
 zstyle ':zle:*' word-style unspecified
 
 ## Alias
+if type exa > /dev/null 2>&1; then
+	## brew install exa
+	alias ls='exa --git'
+	alias la='exa -a --git'
+	alias ll='exa -lab --git'
+	alias tree='exa --tree'
+else
 case ${OSTYPE} in
 	darwin*)
 		export CLICOLOR=1
@@ -41,6 +48,8 @@ case ${OSTYPE} in
 		;;
 esac
 alias g=git
+
+fi
 
 ## Functions
 fe() {
