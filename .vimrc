@@ -45,6 +45,7 @@ Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'mattn/vim-sonictemplate'
 Plug 'jiangmiao/auto-pairs'
 Plug 'itchyny/lightline.vim'
+Plug 'tpope/vim-commentary'
 call plug#end()
 
 let g:sonictemplate_vim_template_dir = [ '~/.dotfiles/sonictemplate' ]
