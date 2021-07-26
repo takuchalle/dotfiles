@@ -17,7 +17,7 @@ set history=200
 set nocompatible
 " enable netrw
 filetype plugin on
-set number
+set number relativenumber
 set fileencodings=utf-8,sjis,euc-jp,latin
 set encoding=utf-8
 set title
