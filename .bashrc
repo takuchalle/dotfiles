@@ -40,6 +40,7 @@ alias em='emacsclient -t -a ""'
 alias be="bundle exec"
 alias ls="ls --color=auto"
 alias add="git add"
+alias g='git'
 
 if [ -f ~/.bash_secret ]; then
     . ~/.bash_secret
@@ -63,3 +64,4 @@ if [ -f $(ghq list --full-path | grep "git/git")/contrib/completion/git-prompt.s
 	export PS1='[\w]$(__git_ps1 " (%s)")\$ '
 fi
 
+source /etc/profile.d/bash_completion.sh
