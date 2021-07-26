@@ -33,7 +33,7 @@ export PS1='\[\e[30;47m\]\t>\[\e[37;46m\]\W\[\e[0;0m\] \$ '
 export GOPATH=$HOME
 export PATH=$GOPATH/bin:$PATH
 
-export EDITOR="emacsclient -t"
+export EDITOR="vim"
 
 # alias
 alias em='emacsclient -t -a ""'
