@@ -33,7 +33,6 @@ export EDITOR="vim"
 alias em='emacsclient -t -a ""'
 alias be="bundle exec"
 alias ls="ls --color=auto"
-alias add="git add"
 alias g='git'
 
 if [ -f ~/.bash_secret ]; then
