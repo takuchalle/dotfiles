@@ -44,9 +44,9 @@ export FZF_DEFAULT_OPTS="--extended --cycle --select-1 --exit-0"
 
 fzf-src() {
 	local selected
-	selected="$(ghq list --full-path | fzf --query="$READLINE_LINE")"
+	selected=$(ghq list | fzf --preview "bat --color=always --style=header,grid --line-range :80 $(ghq root)/{}/README.*")
 	if [ -n "$selected" ]; then
-		READLINE_LINE="builtin cd $selected"
+		READLINE_LINE="builtin cd $(ghq root)/$selected"
 		READLINE_POINT=${#READLINE_LINE}
 	fi
 }
