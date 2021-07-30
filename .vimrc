@@ -46,6 +46,8 @@ Plug 'mattn/vim-sonictemplate'
 Plug 'jiangmiao/auto-pairs'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-commentary'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 let g:sonictemplate_vim_template_dir = [ '~/.dotfiles/sonictemplate' ]
