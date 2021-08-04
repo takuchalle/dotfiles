@@ -35,6 +35,10 @@ alias be="bundle exec"
 alias ls="ls --color=auto"
 alias g='git'
 
+if [ -f ~/.bash_alias ]; then
+    . ~/.bash_alias
+fi
+
 if [ -f ~/.bash_secret ]; then
     . ~/.bash_secret
 fi

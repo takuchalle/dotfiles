@@ -1,0 +1,24 @@
+alias g='git'
+
+if type exa > /dev/null 2>&1; then
+	## brew install exa
+	alias ls='exa'
+	alias la='exa -a'
+	alias ll='exa -lab --git'
+	alias tree='exa --tree'
+else
+case ${OSTYPE} in
+	darwin*)
+		export CLICOLOR=1
+		alias ls='ls -G -F'
+		alias la='ls -a -G -F'
+		alias ll='ls -l -a -G -F'
+		;;
+	linux*)
+		alias ls='ls -F --color=auto'
+		alias la='ls -a -F --color=auto'
+		alias ll='ls -l -a -F --color=auto'
+		;;
+esac
+fi
+
