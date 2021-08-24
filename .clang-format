@@ -6,6 +6,6 @@ Language:        Cpp
 Standard:        Cpp11
 IndentCaseLabels: false
 TabWidth:        4
-UseTab:          ForIndentation
+UseTab:          Never
 ...
 
