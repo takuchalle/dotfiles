@@ -17,6 +17,12 @@ set history=200
 set nocompatible
 " enable netrw
 filetype plugin on
+let g:netrw_liststyle=1
+let g:netrw_banner=0
+let g:netrw_sizestyle="H"
+let g:netrw_timefmt="%Y/%m/%d(%a) %H:%M:%S"
+let g:netrw_preview=1
+
 set number relativenumber
 set fileencodings=utf-8,sjis,euc-jp,latin
 set encoding=utf-8
