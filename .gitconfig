@@ -12,6 +12,7 @@
 
 [alias]
 	st = status
+	sw = switch
 	co = checkout
 	cm = commit
 	sh = show
@@ -25,8 +26,6 @@
 	pager = less -R
 	editor = vim
 
-[merge]
-	ff = false
 
 [ghq]
 	root = ~/src
@@ -34,3 +33,5 @@
 	helper = gcloud.sh
 [init]
 	defaultBranch = main
+[credential]
+	helper = store
