@@ -7,7 +7,7 @@ using namespace std;
 class Solution {
 public:
 	{{_cursor_}}
-}
+};
 
 int
 main(int argc, char* argv[]) {
