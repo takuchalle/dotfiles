@@ -34,3 +34,4 @@ vim.opt.showmatch = true
 
 vim.opt.winblend = 20
 vim.opt.pumblend = 20
+
