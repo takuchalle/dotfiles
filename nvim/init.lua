@@ -5,11 +5,11 @@ vim.cmd("colorscheme onedark")
 
 local on_attach = function(client, bufnr)
 	local set = vim.keymap.set
-	set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>")
-	set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
-	set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>")
-	set("n", "g]", "<cmd>lua vim.diagnostic.goto_next()<CR>")
-	set("n", "g[", "<cmd>lua vim.diagnostic.goto_prev()<CR>")
+	set("n", "gD", vim.lsp.buf.declaration())
+	set("n", "gd", vim.lsp.buf.definition())
+	set("n", "gi", vim.lsp.buf.implementation())
+	set("n", "g]", vim.diagnostic.goto_next())
+	set("n", "g[", vim.diagnostic.goto_prev())
 	set("n", "K", vim.lsp.buf.hover)
 	set("n", "<space>f", function()
 		vim.lsp.buf.format { async = true }

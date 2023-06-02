@@ -17,5 +17,11 @@ return require('packer').startup(function(use)
 	use "hrsh7th/vim-vsnip"
 
 	use "olimorris/onedarkpro.nvim"
+
+	use "jiangmiao/auto-pairs"
+
+	use "itchyny/lightline.vim"
+	use "ziglang/zig.vim"
+	use "rust-lang/rust.vim"
 end)
 
