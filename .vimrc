@@ -58,6 +58,7 @@ Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'rafamadriz/friendly-snippets'
 Plug 'rust-lang/rust.vim'
+Plug 'ziglang/zig.vim'
 call plug#end()
 
 let g:sonictemplate_vim_template_dir = [ '~/.dotfiles/sonictemplate' ]
@@ -84,8 +85,8 @@ function! s:on_lsp_buffer_enabled() abort
 	nmap <buffer> gi <plug>(lsp-implementation)
 	nmap <buffer> gt <plug>(lsp-type-definition)
 	nmap <buffer> <leader>rn <plug>(lsp-rename)
-	nmap <buffer> [g <plug>(lsp-previous-diagnostic)
-	nmap <buffer> ]g <plug>(lsp-next-diagnostic)
+	nmap <buffer> g[ <plug>(lsp-previous-diagnostic)
+	nmap <buffer> g] <plug>(lsp-next-diagnostic)
 	nmap <buffer> K <plug>(lsp-hover)
 	inoremap <buffer> <expr><c-f> lsp#scroll(+4)
 	inoremap <buffer> <expr><c-d> lsp#scroll(-4)
